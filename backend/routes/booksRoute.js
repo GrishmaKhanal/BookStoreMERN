@@ -24,9 +24,7 @@ router.post('/', async (request, response) => {
         const book = await Book.create(newBook);
 
         return response.status(201).json({
-            status: "Book Created Successfully",
-            data: book,
-        });
+            data: book});
 
     }catch(error) {
         console.log(error.message);
