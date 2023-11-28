@@ -1,5 +1,6 @@
 import express from 'express';
 import { Book } from '../models/bookModel.js';
+import mongoose from 'mongoose';
 
 const router = express.Router();
 
@@ -109,7 +110,7 @@ router.delete('/:id', async (request, response) => {
 
     }catch(error) {
         console.log(error.message);
-        response.status(500).send({message: error.message});
+        response.status(500).send({messageFromDeleteRoute: error.message});
     }
 });
 
